@@ -60,22 +60,29 @@ Quick setup:
 
 If you are used to using anaconda, maybe the following process can help you:
 1. Create a python environment to run the project
-  - 1.1 Create a python virtual environment 
+  - 1.1 Create a python virtual environment
+
+
          ```conda create -n your_project_name python=3.5
          ```
   - 1.2 Confirm whether the environment is created successfully
+
+
          ```conda info -e
          ```
   - 1.3 Activate the environment
+
+
          ```activate your_project_name
          ```
 2. Change workspace to your current directory.
       For example: if you put the folder on the desktop, then execute 
+      
          ```cd C:\Users\your_accout_name\Desktop\BEELINE
          ```
 3. Install dependent packages.
-  ```conda install -r requirements.txt
-  ```
+
+  ```conda install -r requirements.txt```
 4. Run the "window.py", and then the graphical interface will open.
 
 This will be a long-term project, we will continue to improve the entire project, if we have time in the future.
