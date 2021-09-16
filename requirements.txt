@@ -1,0 +1,10 @@
+scanpy==1.8.1
+pandas==1.2.4
+matplotlib==3.4.1
+numpy==1.20.2
+networkx==2.5.1
+seaborn==0.11.1
+scanpy==1.8.1
+pyscenic==0.11.2
+scipy==1.6.2
+PyQt5

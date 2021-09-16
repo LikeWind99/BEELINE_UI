@@ -1,0 +1,20 @@
+<RCC>
+  <qresource prefix="新前缀">
+    <file>image/bee.png</file>
+    <file>image/expression.png</file>
+    <file>image/pseudotime.png</file>
+    <file>image/mouse.png</file>
+    <file>image/human.png</file>
+    <file>image/doc.png</file>
+    <file>image/choose.png</file>
+    <file>image/png.png</file>
+    <file>image/jpg.png</file>
+    <file>image/svg.png</file>
+    <file>image/quick_key.png</file>
+    <file>image/english.png</file>
+    <file>image/chinese.png</file>
+    <file>image/save.png</file>
+    <file>image/csv.png</file>
+    <file>image/excel.png</file>
+  </qresource>
+</RCC>

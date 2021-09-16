@@ -1,0 +1,1044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1061</width>
+    <height>859</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>BEELINE</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/新前缀/image/bee.png</normalon>
+   </iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QAction {
+	text-align:left;
+}
+background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,3">
+    <item>
+     <widget class="QFrame" name="leftNav">
+      <property name="styleSheet">
+       <string notr="true">#leftNav {
+	border:1px solid #ffffff;
+	border-radius: 30px;
+	background-color:rgb(242, 247, 251);
+	text-align:center;
+}
+QPushButton {
+	border-radius: 15px;
+	background-color:white;
+}
+QPushButton:hover{
+	background-color: rgb(108, 93, 210);
+}
+</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_6" stretch="2,0,3">
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetFixedSize</enum>
+         </property>
+         <item>
+          <widget class="QPushButton" name="btn1">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Nirmala UI</family>
+             <pointsize>13</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>GRN inference</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn2">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Nirmala UI</family>
+             <pointsize>13</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>RcisTarget and Aucell</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn3">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Nirmala UI</family>
+             <pointsize>13</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="text">
+            <string>t-SNE</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page_0">
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QFrame" name="frame">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3" stretch="5,3">
+           <item>
+            <widget class="QWidget" name="plotArea_1" native="true">
+             <property name="styleSheet">
+              <string notr="true">border: 1px solid #d8d8d8;
+border-radius: 30px;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_5">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_7" stretch="0,0">
+              <item>
+               <widget class="QFrame" name="frame_3">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+	border-radius: 15px;
+	background-color: #ddedf7;
+	color: #2eaeff;
+	border: 1px solid DarkGray;
+	border-radius:10px;
+}
+</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <property name="lineWidth">
+                 <number>3</number>
+                </property>
+                <property name="midLineWidth">
+                 <number>1</number>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="0,0">
+                 <property name="spacing">
+                  <number>20</number>
+                 </property>
+                 <item>
+                  <widget class="QFrame" name="bframe_2">
+                   <property name="acceptDrops">
+                    <bool>false</bool>
+                   </property>
+                   <property name="autoFillBackground">
+                    <bool>false</bool>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">#bframe_2 {
+	border:1px solid #d8d8d8;
+	border-radius:10px;
+	}</string>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::Panel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <property name="lineWidth">
+                    <number>1</number>
+                   </property>
+                   <property name="midLineWidth">
+                    <number>1</number>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_8">
+                    <item>
+                     <widget class="QLabel" name="label_3">
+                      <property name="font">
+                       <font>
+                        <family>Nirmala UI</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>The algorithm you want to use:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="comboBox_2">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Nirmala UI</family>
+                       </font>
+                      </property>
+                      <property name="sizeAdjustPolicy">
+                       <enum>QComboBox::AdjustToContents</enum>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>GRNBoost2</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>LEAP</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>PPCOR</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>SCODE</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>SINCERITIES</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,1,3">
+                   <property name="leftMargin">
+                    <number>7</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>7</number>
+                   </property>
+                   <item>
+                    <widget class="QPushButton" name="rbtn1_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Nirmala UI</family>
+                       <pointsize>12</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="contextMenuPolicy">
+                      <enum>Qt::DefaultContextMenu</enum>
+                     </property>
+                     <property name="text">
+                      <string>Run</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="rightArrow_2">
+                     <property name="font">
+                      <font>
+                       <pointsize>25</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">color: rgb(46, 174, 255);</string>
+                     </property>
+                     <property name="text">
+                      <string>→</string>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="rbtn2_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>0</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>16777215</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Nirmala UI</family>
+                       <pointsize>12</pointsize>
+                       <weight>75</weight>
+                       <bold>true</bold>
+                      </font>
+                     </property>
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
+                     </property>
+                     <property name="text">
+                      <string>Plot</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTextBrowser" name="outputArea">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Nirmala UI</family>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_1">
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QFrame" name="frame_2">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4" stretch="4,1">
+           <item>
+            <widget class="QWidget" name="plotArea_2" native="true">
+             <property name="styleSheet">
+              <string notr="true">border: 1px solid #d8d8d8;
+border-radius: 30px;</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QFrame" name="frame_6">
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_9" stretch="0">
+              <item>
+               <widget class="QFrame" name="frame_4">
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
+	border-radius: 15px;
+	background-color: #ddedf7;
+	color: #2eaeff;
+	border: 1px solid DarkGray;
+	border-radius:10px;
+}
+</string>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <property name="lineWidth">
+                 <number>3</number>
+                </property>
+                <property name="midLineWidth">
+                 <number>1</number>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <item>
+                  <widget class="QFrame" name="frame_7">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QVBoxLayout" name="verticalLayout_2">
+                    <item>
+                     <widget class="QLabel" name="label">
+                      <property name="font">
+                       <font>
+                        <family>Nirmala UI</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>choose the reference species:</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QComboBox" name="comboBox">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Nirmala UI</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>mouse</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>human</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QFrame" name="frame_8">
+                   <property name="frameShape">
+                    <enum>QFrame::StyledPanel</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,1">
+                    <property name="spacing">
+                     <number>60</number>
+                    </property>
+                    <property name="leftMargin">
+                     <number>20</number>
+                    </property>
+                    <property name="rightMargin">
+                     <number>20</number>
+                    </property>
+                    <item>
+                     <widget class="QPushButton" name="rbtn1_3">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Nirmala UI</family>
+                        <pointsize>12</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="contextMenuPolicy">
+                       <enum>Qt::DefaultContextMenu</enum>
+                      </property>
+                      <property name="text">
+                       <string>RcisTarget</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="rbtn2_3">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Nirmala UI</family>
+                        <pointsize>12</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="cursor">
+                       <cursorShape>PointingHandCursor</cursorShape>
+                      </property>
+                      <property name="text">
+                       <string>Aucell</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <layout class="QVBoxLayout" name="verticalLayout_5" stretch="5,1">
+        <item>
+         <widget class="QWidget" name="plotArea_3" native="true">
+          <property name="styleSheet">
+           <string notr="true">border: 1px solid #d8d8d8;
+border-radius: 30px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_9">
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	border-radius: 15px;
+	background-color: #ddedf7;
+	color: #2eaeff;
+	border: 1px solid DarkGray;
+	border-radius:10px;
+}
+</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_8">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_10">
+             <item>
+              <widget class="QLabel" name="label_2">
+               <property name="font">
+                <font>
+                 <family>Nirmala UI</family>
+                 <pointsize>12</pointsize>
+                </font>
+               </property>
+               <property name="text">
+                <string>choose the top index:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>80</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>80</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>11</pointsize>
+                </font>
+               </property>
+               <item>
+                <property name="text">
+                 <string>1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>3</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn4_3">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Nirmala UI</family>
+               <pointsize>13</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="text">
+              <string>Run</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn4_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>200</width>
+               <height>50</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>Nirmala UI</family>
+               <pointsize>13</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
+             <property name="text">
+              <string>Plot</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1061</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Nirmala UI</family>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="font">
+     <font>
+      <family>Nirmala UI</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuchoose">
+     <property name="title">
+      <string>choose</string>
+     </property>
+     <addaction name="actionexpression_data"/>
+     <addaction name="separator"/>
+     <addaction name="actionpseudotime_data"/>
+     <addaction name="separator"/>
+    </widget>
+    <widget class="QMenu" name="menuexport_as">
+     <property name="title">
+      <string>export as</string>
+     </property>
+     <addaction name="actionPNG"/>
+     <addaction name="separator"/>
+     <addaction name="actionJPG"/>
+     <addaction name="separator"/>
+     <addaction name="actionSVG"/>
+     <addaction name="separator"/>
+    </widget>
+    <widget class="QMenu" name="menusave_as">
+     <property name="title">
+      <string>save as</string>
+     </property>
+     <addaction name="actioncsv"/>
+     <addaction name="separator"/>
+     <addaction name="actionexcel"/>
+     <addaction name="separator"/>
+    </widget>
+    <addaction name="menuchoose"/>
+    <addaction name="separator"/>
+    <addaction name="menuexport_as"/>
+    <addaction name="separator"/>
+    <addaction name="menusave_as"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuSetting">
+    <property name="font">
+     <font>
+      <family>Nirmala UI</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Setting</string>
+    </property>
+    <widget class="QMenu" name="menulanguage">
+     <property name="title">
+      <string>language</string>
+     </property>
+     <addaction name="actionEnglish"/>
+     <addaction name="separator"/>
+     <addaction name="actionChinese"/>
+     <addaction name="separator"/>
+    </widget>
+    <addaction name="menulanguage"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="font">
+     <font>
+      <family>Nirmala UI</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actiondocument"/>
+    <addaction name="separator"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSetting"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionexpression_data"/>
+   <addaction name="actionpseudotime_data"/>
+   <addaction name="actionEnglish"/>
+   <addaction name="actionChinese"/>
+   <addaction name="actioncsv"/>
+   <addaction name="actionexcel"/>
+   <addaction name="actionPNG"/>
+   <addaction name="actionJPG"/>
+   <addaction name="actionSVG"/>
+   <addaction name="actiondocument"/>
+  </widget>
+  <action name="actionEnglish">
+   <property name="icon">
+    <iconset>
+     <normalon>:/新前缀/image/english.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionChinese">
+   <property name="icon">
+    <iconset>
+     <normalon>:/新前缀/image/chinese.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>Chinese</string>
+   </property>
+  </action>
+  <action name="actionexpression_data">
+   <property name="icon">
+    <iconset>
+     <normalon>:/新前缀/image/expression.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>expression data</string>
+   </property>
+  </action>
+  <action name="actionpseudotime_data">
+   <property name="icon">
+    <iconset>
+     <normalon>:/新前缀/image/pseudotime.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>pseudotime data</string>
+   </property>
+  </action>
+  <action name="actionPNG">
+   <property name="icon">
+    <iconset>
+     <normalon>:/新前缀/image/png.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>PNG</string>
+   </property>
+  </action>
+  <action name="actionJPG">
+   <property name="icon">
+    <iconset>
+     <normalon>:/新前缀/image/jpg.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>JPG</string>
+   </property>
+  </action>
+  <action name="actionSVG">
+   <property name="icon">
+    <iconset>
+     <normalon>:/新前缀/image/svg.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>SVG</string>
+   </property>
+  </action>
+  <action name="actioncsv">
+   <property name="icon">
+    <iconset>
+     <normalon>:/新前缀/image/csv.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>csv</string>
+   </property>
+  </action>
+  <action name="actionexcel">
+   <property name="icon">
+    <iconset>
+     <normalon>:/新前缀/image/excel.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>excel</string>
+   </property>
+  </action>
+  <action name="actiondocument">
+   <property name="icon">
+    <iconset>
+     <normalon>:/新前缀/image/doc.png</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>document</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="picture.qrc"/>
+ </resources>
+ <connections/>
+</ui>
