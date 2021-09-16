@@ -54,7 +54,7 @@ Quick setup:
 2. Download this Repository.
 3. Use pip to install the required libraries(e.g. numpy, pandas...).
        You can use the following command in the current directory to quickly install: 
-           ```
+```
            pip install -r requirements.txt
            ```
 4. Run the "window.py", and then the graphical interface will open.
@@ -64,21 +64,21 @@ If you are used to using anaconda, maybe the following process can help you:
   - 1.1 Create a python virtual environment
 
 
-         ```
+```
          conda create -n your_project_name python=3.5
-         ```
+```
   - 1.2 Confirm whether the environment is created successfully
 
 
-         ```
+```
          conda info -e
-         ```
+```
   - 1.3 Activate the environment
 
 
-         ```
+ ```
          activate your_project_name
-         ```
+```
 2. Change workspace to your current directory.
       For example: if you put the folder on the desktop, then execute 
       
