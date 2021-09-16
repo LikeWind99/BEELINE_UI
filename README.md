@@ -41,7 +41,7 @@
 #.......................N............................................#
 #Created by shenAo     Time: 2021-08-10     Email: shen_a_o@qq.com   #
 ######################################################################
-```
+
 
 BEELINE: Benchmarking gEnE reguLatory network Inference from siNgle-cEll transcriptomic data.
 
@@ -77,3 +77,4 @@ This will be a long-term project, we will continue to improve the entire project
 Finally, thank a lot for my teammates: Liu Yun, Hu Xinyun, Sun Zichun, Ren Zirui for refactoring part of the code of BEELINE, and their great help to the entire project. And last, especially thanks for the instructions and support our dear instructor Shi Qianqian gave to us, we couldn't achieve this without her help.
 
 At the end, if you have any question, please can contact us by email.
+```
