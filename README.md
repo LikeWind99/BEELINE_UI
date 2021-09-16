@@ -83,6 +83,7 @@ If you are used to using anaconda, maybe the following process can help you:
 3. Install dependent packages.
 ```
   conda install -r requirements.txt
+```
   
   
 4. Run the "window.py", and then the graphical interface will open.
