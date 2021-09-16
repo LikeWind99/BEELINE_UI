@@ -82,7 +82,9 @@ If you are used to using anaconda, maybe the following process can help you:
          ```
 3. Install dependent packages.
 
-  ```conda install -r requirements.txt```
+  conda install -r requirements.txt
+  
+  
 4. Run the "window.py", and then the graphical interface will open.
 
 This will be a long-term project, we will continue to improve the entire project, if we have time in the future.
