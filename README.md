@@ -60,13 +60,13 @@ Quick setup:
 
 If you are used to using anaconda, maybe the following process can help you:
 1. Create a python environment to run the project
-  1.1 Create a python virtual environment
+  - 1.1 Create a python virtual environment
          ```conda create -n your_project_name python=3.5
          ```
-  1.2 Confirm whether the environment is created successfully
+  - 1.2 Confirm whether the environment is created successfully
          ```conda info -e
          ```
-  1.3 Activate the environment
+  - 1.3 Activate the environment
          ```activate your_project_name
          ```
 2. Change workspace to your current directory.
