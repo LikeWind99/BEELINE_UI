@@ -81,7 +81,7 @@ If you are used to using anaconda, maybe the following process can help you:
          ```cd C:\Users\your_accout_name\Desktop\BEELINE
          ```
 3. Install dependent packages.
-
+```
   conda install -r requirements.txt
   
   
