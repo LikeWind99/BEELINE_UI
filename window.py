@@ -1,40 +1,45 @@
 import os
 import re
 import sys
-
-from scanpy.plotting._tools.scatterplots import tsne
-from src import design
-from src import help
 import glob
-from PyQt5 import QtWidgets
-from matplotlib import pyplot as plt
-from src import picture
-from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
-from PyQt5 import uic
+import numpy as np
 import pandas as pd
-import matplotlib
-from matplotlib.font_manager import FontProperties
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 import networkx as nx
+import seaborn as sns
+
+from PyQt5 import uic
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import *
+
+import matplotlib
+import matplotlib.cm as cmx
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
-import matplotlib.cm as cmx
-import numpy as np
+from matplotlib.font_manager import FontProperties
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
+
+from src import help
+from src import LEAP
 from src import PPCOR
 from src import SCODE
-from src import SINCERITIES
-from src import LEAP
+from src import design
+from src import picture
 from src import GRNBoost2
-import seaborn as sns
-import scanpy as sc
-from pyscenic.rnkdb import FeatherRankingDatabase as RankingDatabase
-from pyscenic.utils import modules_from_adjacencies
-from pyscenic.prune import prune2df, df2regulons
-from pyscenic.aucell import aucell
-from scanpy.preprocessing._normalization import normalize_total
+from src import SINCERITIES
+
 from scipy.sparse import issparse
+
+import scanpy as sc
+from scanpy.plotting._tools.scatterplots import tsne
+from scanpy.preprocessing._normalization import normalize_total
+
+from pyscenic.aucell import aucell
+from pyscenic.prune import prune2df, df2regulons
+from pyscenic.utils import modules_from_adjacencies
+from pyscenic.rnkdb import FeatherRankingDatabase as RankingDatabase
+
 
 matplotlib.use('Qt5Agg')  # 使用Qt后台，以便嵌入Qt
 font = FontProperties(
@@ -282,7 +287,7 @@ class mainWindow(QtWidgets.QMainWindow, design.Ui_MainWindow):
         '''
         match = r'%s.*\.%s' % (filename, fileType)
         result = [
-            re.findall(match, file)[0] for file in os.listdir('./')
+            re.findall(match, file)[0] for file in os.listdir('./figures')
             if len(re.findall(match, file))
         ]
         count = len(result)
@@ -362,7 +367,7 @@ class mainWindow(QtWidgets.QMainWindow, design.Ui_MainWindow):
     # 关系矩阵导出为CSV格式
     def exportCSV(self):
         try:
-            relationMatrix.to_csv('./relationMatrix.csv')
+            pd.DataFrame(relationMatrix).to_csv('./relationMatrix.csv')
         except NameError:
             print(
                 "Please <strong>run the algorithm or wait patiently</strong> for the algorithm to complete!<br>")
@@ -370,7 +375,7 @@ class mainWindow(QtWidgets.QMainWindow, design.Ui_MainWindow):
     # 关系矩阵导出为Excel格式
     def exportExcel(self):
         try:
-            relationMatrix.to_excel('./relationMatrix.xls')
+            pd.DataFrame(relationMatrix).to_excel('./relationMatrix.xls')
         except NameError:
             print(
                 "Please <strong>run the algorithm or wait patiently</strong> for the algorithm to complete!<br>")
