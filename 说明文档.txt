@@ -1,29 +1,44 @@
-背景：随着单细胞测序技术的发展，基于单细胞RNA-Seq数据推断调控网络的方法已经越来越多了，但目前还没有一种将这些算法进行集成并将结果可视化的交互工具。在这里，我们开发了一种基于单细胞RNA-seq数据的调控网络推断方法研究及其可视化的集成交互工具。
+<center>软件使用说明</center><br>
+背景: 随着单细胞测序技术的发展，基于单细胞RNA-Seq数据推断调控网络的方法已经越来越多了，但目前还没有一种将这些算法进行集成并将结果可视化的交互工具。在这里，我们开发了一种基于单细胞RNA-seq数据的调控网络推断方法研究及其可视化的集成交互工具。<br>
 
-软件使用说明：<br>
-File：<br>
-Expression data:输入表达矩阵<br>
-Pseudo time：输入伪时间<br>
 <br>
-GRN inference：<br>
-5种基于单细胞RNA-seq数据的调控网络推断方法<br>
-SCODE<sup>[1]</sup>：基于常微分方程(ODE)推断调控网络<br>
-LEAP：基于伪时间滞后的调控网络推断<br>
-GRNBoost2<sup>[2-3]</sup>：基于随机森林和boosting算法<br>
-PPCOR：基于偏相关分析在消除其他所有随机变量影响的条件下，考察两变量之间的相关性<br>
-SINCERITIES<sup>[4]</sup>：基于带有时间标记的横截面表达数据推断调控网络<br>
+Input: <br>
+Expression data: 输入表达矩阵<br>
+Pseudotime data: 输入伪时间<br>
 <br>
-RcisTarget<sup>[2]</sup>：去除假阳性结果<br>
-输入：基因列表和motif数据库<br>
-输出：包含motif富集及其在一些字段上的注释信息的表<br>
 
-AUCell<sup>[2]</sup>：给单细胞的regulon活性打分<br>
-输入：scRNA-seq dataset<br>
-输出：每个细胞中的基因集活性矩阵<br>
+Output: <br>
+csv, excel: 数据结果保存<br>
+png, jpg, svg: 可视化结果保存<br>
 <br>
-t-SNE：对结果进行降维可视化<br>
+
+GRN inference: 5种基于单细胞RNA-seq数据的调控网络推断方法<br>
+1. SCODE<sup>[1]</sup>: 基于常微分方程(ODE)推断调控网络<br>
+2. LEAP: 基于伪时间滞后的调控网络推断<br>
+3. GRNBoost2<sup>[2-3]</sup>: 基于随机森林和boosting算法<br>
+4. PPCOR: 基于偏相关分析在消除其他所有随机变量影响的条件下，考察两变量之间的相关性<br>
+5. SINCERITIES<sup>[4]</sup>: 算法关注于带有时间标记的横截面表达数据。这种数据是在细胞受到刺激后收集到的多个时间点的单细胞表达谱生成的。这个算法通过对时间上的基因表达分布的变化做一个正则化的线性回归（岭回归）来恢复基因之间的直接调控关系。同时基因之间互相的调控关系，如激活和抑制关系，则是通过基因对之间的偏相关分析得到的<br>
 <br>
-参考：<br>
+
+RcisTarget<sup>[2]</sup>: 去除假阳性结果<br>
+输入: 基因列表和motif数据库<br>
+输出: 包含motif富集及其在一些字段上的注释信息的表<br>
+<br>
+
+AUCell<sup>[2]</sup>: 给单细胞的regulon活性打分<br>
+输入: scRNA-seq dataset<br>
+输出: 每个细胞中的基因集活性矩阵<br>
+<br>
+
+t-SNE: 对结果进行降维可视化<br>
+<br>
+
+推荐分析流程: <br>
+数据输入 -> GRNBoost2 -> RcisTarget -> AUCell -> t-SNE -> 结果保存<br>
+无需任何代码，一键式流程分析<br>
+<br>
+
+参考: <br>
 [1] SCODE: an efficient regulatory network inference algorithm from single-cell RNA-Seq during differentiation.[J]. Bioinformatics (Oxford, England), 2017.<br>
 [2] Aibar, Sara, Carmen Bravo González-Blas, Thomas Moerman, Jasper Wouters, Vân Anh Huynh-Thu, Hana Imrichová, Zeynep Kalender Atak, et al. 2017. “SCENIC: Single-Cell Regulatory Network Inference and Clustering.” Nature Methods 14 (october): 1083–6. doi:10.1038/nmeth.4463.<br>
 [3] Huynh-Thu V. A., Irrthum A., Wehenkel L., and Geurts P.Inferring regulatory networksfrom expression data using tree-based methods.PLoS ONE, 5(9):e12776, 2019.<br>

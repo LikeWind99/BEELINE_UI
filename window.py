@@ -515,7 +515,8 @@ class calcRelationMat(QThread):
             try:
                 sample = SCODE.SCODE(pseudotime_data, expression_data)  # 创建实例
                 print('Start, please wait a moment...<br>')
-                relationMatrix = sample.SCODE_Run()  # 算法运行
+                relationMatrix = sample.SCODE_Run(
+                    expression_data, pseudotime_data)  # 算法运行
                 print(
                     'End, you can click plot button to visualize the result!<br>')
             except NameError:
