@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from pandas.core.frame import DataFrame
 from scipy.stats import norm
 
 
@@ -67,7 +68,10 @@ class PCOR:
         #       'n': n,
         #       'gp': gp,
         #       'method': method}
-        return p_value
+        # print(x.columns.values)
+        df = pd.DataFrame(p_value,columns=x.columns.values, index=x.columns.values)
+        # print(df)
+        return df
 
 
 if __name__ == '__main__':

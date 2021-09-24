@@ -8,7 +8,7 @@ class SCODE:
     def __init__(self, pseudotimeData, exprmatxData, pnum=4, epochs=100):
         self.pseudotimeData = pseudotimeData
         self.exprmatxData = exprmatxData
-        self.tfnum, self.cnum = exprmatxData.shape
+        self.cnum, self.tfnum = exprmatxData.shape
         self.pnum = pnum
         self.epochs = epochs
 
@@ -17,6 +17,7 @@ class SCODE:
             for j in range(inIter):
                 x[i,
                   j] = np.exp(y[i] * z[j]) + np.random.uniform(-0.001, 0.001)
+                return x
 
     # SCODE核心函数
     def SCODE_Run(self, exprmatxData, pseudotimeData):
@@ -39,7 +40,7 @@ class SCODE:
             pseudotimeData['PseudoTime2']
         pstime = pseudotimeData['PseudoTime'] / np.max(
             pseudotimeData['PseudoTime'])
-
+        exprmatxData = exprmatxData.T
         ###############################################
         # 参数初始化
         ###############################################
@@ -50,17 +51,23 @@ class SCODE:
         # 迭代拟合
         ###############################################
         for epoch in range(self.epochs):
-            target = np.floor(np.random.uniform(1, self.pnum + 1))
+            target = int(np.floor(np.random.uniform(1, self.pnum + 1)))
             new_B[target] = np.random.uniform(minB, maxB)
             if (epoch == self.epochs):
                 new_B = old_B
-            self.sampleZ(self.pnum, self.cnum, Z, new_B, pstime)
+            Z = self.sampleZ(self.pnum, self.cnum, Z, new_B, pstime)
+
             for i in range(self.tfnum):
                 reg = linear_model.LinearRegression()
-                reg.fit(numpy.transpose(Z), exprmatxData[i, ])
+
+                # print(exprmatxData[i, :].reshape(1, -1).shape)
+                reg.fit(numpy.transpose(Z), exprmatxData[i, :])
+                # print(reg.coef_)
+                # print(W.shape)
                 for j in range(self.pnum):
                     W[i, j] = reg.coef_[j]
-                WZ[i, :] = W[i, :] @ Z
+                WZ[i, :] = np.sum(W[i, :] @ Z)
+                # print(WZ.shape)
 
             tmp_RSS = np.sum(np.power((exprmatxData - WZ), 2))
             if tmp_RSS < RSS:
@@ -73,8 +80,9 @@ class SCODE:
             np.fill_diagonal(B, new_B)
 
             invW = np.linalg.pinv(W)
+            # print(invW.shape)
             A = W @ B @ invW
-            return A
+        return A
 
 
 if __name__ == '__main__':

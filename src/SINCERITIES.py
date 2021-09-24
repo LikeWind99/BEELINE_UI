@@ -88,7 +88,7 @@ class sincerities:
         lambda_res = []
 
         for gi in range(numGENES):
-            beta = np.zeros((X_matrix.shape[1], 1))
+            # beta = np.zeros((X_matrix.shape[1], 1))
             Y_vector = DISTANCE_matrix[1:(num_time_points), gi]
             ridge = RidgeCV(alphas=alphas).fit(X_matrix, Y_vector)
             pred_lambda_min[:, gi] = ridge.coef_
@@ -96,7 +96,7 @@ class sincerities:
             lambda_res.append(ridge.alpha_)
 
         max_pred = np.amax(pred_lambda_min)
-        print(max_pred)
+        # print(max_pred)
         adj_matrix = pred_lambda_min / max_pred
         # interactions = np.array(adj_matrix.flatten())
         # print(len(interactions))
